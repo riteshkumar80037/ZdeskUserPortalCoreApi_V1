@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZdeskUserPortalApiCore", "Z
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZdeskUserPortal.DataAccess", "..\ZdeskUserPortal.DataAccess\ZdeskUserPortal.DataAccess.csproj", "{C3F4CEA1-550A-4471-96DC-E84E9F51E6A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZdeskUserPortal.Domain", "..\ZdeskUserPortal.Domain\ZdeskUserPortal.Domain.csproj", "{425ABA3B-4D14-422C-8892-B8EA88ADC51E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZdeskUserPortal.Business", "..\ZdeskUserPortal.Business\ZdeskUserPortal.Business.csproj", "{F640480C-02B8-48DC-AF68-845D5FAA7B85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZdeskUserPortal.DTOModel", "..\ZdeskUserPortal.DTOModel\ZdeskUserPortal.DTOModel.csproj", "{36B2C981-6C26-4228-B695-49645C30D4DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{C3F4CEA1-550A-4471-96DC-E84E9F51E6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3F4CEA1-550A-4471-96DC-E84E9F51E6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3F4CEA1-550A-4471-96DC-E84E9F51E6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{425ABA3B-4D14-422C-8892-B8EA88ADC51E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{425ABA3B-4D14-422C-8892-B8EA88ADC51E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{425ABA3B-4D14-422C-8892-B8EA88ADC51E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{425ABA3B-4D14-422C-8892-B8EA88ADC51E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F640480C-02B8-48DC-AF68-845D5FAA7B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F640480C-02B8-48DC-AF68-845D5FAA7B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F640480C-02B8-48DC-AF68-845D5FAA7B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F640480C-02B8-48DC-AF68-845D5FAA7B85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B2C981-6C26-4228-B695-49645C30D4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B2C981-6C26-4228-B695-49645C30D4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B2C981-6C26-4228-B695-49645C30D4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B2C981-6C26-4228-B695-49645C30D4DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

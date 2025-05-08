@@ -16,6 +16,10 @@ using Microsoft.OpenApi.Models;
 using System.ComponentModel;
 using ZdeskUserPortal.DataAccess;
 using ZdeskUserPortal.DataAccess.Home;
+using ZdeskUserPortal.Domain.RepositoryInterfaces;
+using ZdeskUserPortal.Business.Services;
+using ZdeskUserPortal.Business.Interface;
+using ZdeskUserPortal.DataAccess.RepositoryServices;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,7 +37,8 @@ var config = new ConfigurationBuilder()
     .AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: false)
     .Build();
 
-
+//Mapper 
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddSingleton<IConfiguration>(config);
 // Learn more about configuring Swagger/OpenAPI at
 builder.Services.AddEndpointsApiExplorer();
@@ -73,6 +78,8 @@ builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 
 var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
 var privateKey = builder.Configuration.GetValue<string>("PrivateKey");
+
+
 builder.Services.Configure<AuthSettings>(builder.Configuration);
 
 builder.Services.AddCors(options =>
@@ -90,6 +97,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddSingleton<AuthService>();
 builder.Services.AddTransient<IDbConnectionFactory, SqlDbConnectionFactory>();
 builder.Services.AddTransient<LoginAccess>();
+builder.Services.AddScoped(typeof(ILoginRepository), typeof(LoginRepositoryServices));
+builder.Services.AddScoped<ILogin, LoginServices>();
 // Assign the configuration to the static property
 SqlDbConnectionFactory.StaticConfiguration = builder.Configuration;
 

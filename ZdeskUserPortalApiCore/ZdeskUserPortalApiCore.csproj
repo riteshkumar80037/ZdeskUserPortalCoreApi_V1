@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
@@ -19,7 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ZdeskUserPortal.Business\ZdeskUserPortal.Business.csproj" />
     <ProjectReference Include="..\ZdeskUserPortal.DataAccess\ZdeskUserPortal.DataAccess.csproj" />
+    <ProjectReference Include="..\ZdeskUserPortal.DTOModel\ZdeskUserPortal.DTOModel.csproj" />
   </ItemGroup>
 
 </Project>

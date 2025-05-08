@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZdeskUserPortal.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+524bd27fec51899232c206bb4004b3a9e15a5ef8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b7e10941761f6eba6229ab0a23da5c7fb2a32c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZdeskUserPortal.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZdeskUserPortal.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

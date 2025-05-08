@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using ZdeskUserPortal.Domain.Model;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ZdeskUserPortal.DataAccess.Home
@@ -21,13 +22,13 @@ namespace ZdeskUserPortal.DataAccess.Home
         {
         }
 
-        public DateTime  test()
+        public async Task<UsersEntity> Login(string userEmail,string password)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@CountryCode", 1, DbType.String, ParameterDirection.Input);
-            parameters.Add("@InDate", System.DateTime.Now, DbType.Date, ParameterDirection.Input);
+            parameters.Add("@CountryCode", userEmail, DbType.String, ParameterDirection.Input);
+            parameters.Add("@InDate", password, DbType.String, ParameterDirection.Input);
 
-            return GetValueByProcedure<DateTime, DynamicParameters>(PROC_LASTBUSINESSDAY, parameters, CONNECTION_STRING_NAME);
+            return  GetValueByProcedure<UsersEntity, DynamicParameters>(PROC_LASTBUSINESSDAY, parameters, CONNECTION_STRING_NAME);
 
         }
     }
