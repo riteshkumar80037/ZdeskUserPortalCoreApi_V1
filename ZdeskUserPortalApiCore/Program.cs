@@ -1,0 +1,152 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.Extensions.Configuration;
+using ZdeskUserPortalApiCore.Extension;
+using ZdeskUserPortalApiCore.Middleware;
+using ZdeskUserPortalApiCore.Services;
+using NLog;
+using NLog.Web;
+using Microsoft.Extensions.DependencyInjection;
+using ZdeskUserPortalApiCore.JWTToken;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.OpenApi.Models;
+using System.ComponentModel;
+using ZdeskUserPortal.DataAccess;
+using ZdeskUserPortal.DataAccess.Home;
+
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+builder.Services.AddControllers();
+
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
+var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+var config = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
+    .AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: false)
+    .Build();
+
+
+builder.Services.AddSingleton<IConfiguration>(config);
+// Learn more about configuring Swagger/OpenAPI at
+builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    // Security scheme for JWT
+    var securityScheme = new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Description = "Enter JWT Bearer token **_only_**",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        Reference = new OpenApiReference
+        {
+            Type = ReferenceType.SecurityScheme,
+            Id = "Bearer"
+        }
+    };
+
+    c.AddSecurityDefinition("Bearer", securityScheme);
+
+    // Require token in all endpoints
+    var securityRequirement = new OpenApiSecurityRequirement
+    {
+        {
+            securityScheme, new string[] {}
+        }
+    };
+
+    c.AddSecurityRequirement(securityRequirement);
+});
+
+builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
+
+var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
+var privateKey = builder.Configuration.GetValue<string>("PrivateKey");
+builder.Services.Configure<AuthSettings>(builder.Configuration);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "AllowedApisPolicy", policy =>
+    {
+        policy.WithOrigins(allowedOrigins)
+              .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
+//builder.Services.AddSingleton<AuthSettings>();
+
+builder.Services.AddSingleton<AuthService>();
+builder.Services.AddTransient<IDbConnectionFactory, SqlDbConnectionFactory>();
+builder.Services.AddTransient<LoginAccess>();
+// Assign the configuration to the static property
+SqlDbConnectionFactory.StaticConfiguration = builder.Configuration;
+
+// Add versioning
+builder.Services.UseAppVersioningHandler();
+
+// Add model validation
+builder.Services.UseModelValidationHandler();
+
+// Add Token Validate
+builder.Services
+    .AddAuthentication(x =>
+    {
+        x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(x =>
+    {
+        x.RequireHttpsMetadata = false;
+        x.SaveToken = true;
+        x.TokenValidationParameters = new TokenValidationParameters
+        {
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(privateKey)),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("User", policy => policy.RequireRole("user"));
+});
+
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+var enableSwagger = builder.Configuration.GetValue<bool>("EnableSwagger");
+if (enableSwagger)
+{
+
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+        foreach (var description in provider.ApiVersionDescriptions)
+        {
+            options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+        }
+    });
+}
+// Global Exception Middleware
+app.UseGlobalExceptionHandler();
+app.UseCors("AllowedApisPolicy");
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
