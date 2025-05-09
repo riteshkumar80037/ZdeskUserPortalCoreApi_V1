@@ -117,6 +117,7 @@ builder.Services.AddScoped(typeof(ILoginRepository), typeof(LoginRepositoryServi
 builder.Services.AddScoped<ILogin, LoginServices>();
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepositoryServices<>));
 builder.Services.AddScoped<IBusinessUnit, BusinessUnitServices>();
+builder.Services.AddScoped<IRefereshToken, RefereshTokenServices>();
 builder.Services.AddScoped<IMaster, MasterServices>();
 // Assign the configuration to the static property
 SqlDbConnectionFactory.StaticConfiguration = builder.Configuration;
@@ -141,8 +142,13 @@ builder.Services
         x.TokenValidationParameters = new TokenValidationParameters
         {
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(privateKey)),
-            ValidateIssuer = false,
-            ValidateAudience = false
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime=true,
+            ValidIssuer = "abc",
+            ValidAudience = "abc",
+            ClockSkew = TimeSpan.Zero
+
         };
     });
 builder.Services.AddAuthorization(options =>

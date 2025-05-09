@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using ZdeskUserPortal.Domain.Model;
+using ZdeskUserPortal.Domain.RepositoryInterfaces;
 
 namespace ZdeskUserPortal.DataAccess.EntityFramwork.Context
 {
@@ -11,5 +12,6 @@ namespace ZdeskUserPortal.DataAccess.EntityFramwork.Context
         : base(options) { }
 
         public DbSet<BusinessUnitEntity> BusinessUnit { get; set; }
+        public DbSet<RefereshTokenEntity> RefreshTokens { get; set; }
     }
 }

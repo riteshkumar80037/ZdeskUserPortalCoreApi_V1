@@ -9,7 +9,8 @@ namespace ZdeskUserPortal.DTOModel
 {
     public class TokenDTO
     {
-        public string Token { get; set; } = string.Empty;
+        public string? AccessToken { get; set; }
+        public string? RefreshToken { get; set; }
         public BigInteger Id { get; set; } = 0;
     }
 }

@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using ZdeskUserPortal.Domain.Model;
-using ZdeskUserPortal.DTOModel;
 
-namespace ZdeskUserPortal.Business.Interface
+namespace ZdeskUserPortal.Domain.RepositoryInterfaces
 {
-    public interface ILogin
+    public interface IRefereshToken
     {
-        Task<Tuple<int,string>> UserLogin(string username, string password);
-        Task<string> GenerateRefreshToken();
+        Task<RefereshTokenEntity> save(RefereshTokenEntity refereshTokenEntity);
         Task<RefereshTokenEntity> getByToken(string token);
         Task<RefereshTokenEntity> update(string token, RefereshTokenEntity refereshTokenEntity);
     }
