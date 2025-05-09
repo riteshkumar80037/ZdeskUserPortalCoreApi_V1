@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -20,11 +21,13 @@ namespace ZdeskUserPortal.Business.Services
             _loginRepository = loginRepository;
             _mapper = mapper;
         }
-        public async Task<LoginDTO> UserLogin(string username, string password)
+        public async Task<BigInteger> UserLogin(string username, string password)
         {
-            var user= await _loginRepository.Login(username, password);
-            LoginDTO loginDTO = _mapper.Map<LoginDTO>(user);
-            return loginDTO;
+            var user = await _loginRepository.Login(username, password);
+            if (user == null) return 0;
+            return user.Id;
         }
+
+       
     }
 }

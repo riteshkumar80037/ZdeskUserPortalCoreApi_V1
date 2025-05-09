@@ -35,7 +35,7 @@ namespace ZdeskUserPortalApiCore.Controllers
             //var v = Convert.ToInt16("test");
             
            
-            var user = new UserToken( "Ritesh@gmail.com","123456", Roles: new[] { "Admin", "User" });
+            var user = new UserToken( 123,"", Roles: new[] { "Admin", "User" });
           var token= _authService.GenerateToken(user);
             var responseMetadata = new ResponseMetaData<string>()
             {

@@ -1,5 +1,7 @@
-﻿namespace ZdeskUserPortalApiCore.DTOModel
+﻿using System.Numerics;
+
+namespace ZdeskUserPortalApiCore.DTOModel
 {
   
-    public record UserToken(string Email, string Password, string[] Roles);
+    public record UserToken(BigInteger Id,string Email,string[] Roles);
 }

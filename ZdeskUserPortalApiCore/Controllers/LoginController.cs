@@ -25,21 +25,39 @@ namespace ZdeskUserPortalApiCore.Controllers
 
 
         [HttpPost(Name = "Login")]
-        [ProducesResponseType<ResponseMetaData<WeatherForecast>>(StatusCodes.Status200OK)]
-        [ProducesResponseType<ResponseMetaData<WeatherForecast>>(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType<ResponseMetaData<WeatherForecast>>(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType<ResponseMetaData<TokenDTO>>(StatusCodes.Status200OK)]
+        [ProducesResponseType<ResponseMetaData<TokenDTO>>(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType<ResponseMetaData<TokenDTO>>(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Login(LoginDTO loginDTO)
         {
-
-            var result= _loginService.UserLogin(loginDTO.EmailId, loginDTO.Password);
-            var user = new UserToken(loginDTO.EmailId, loginDTO.Password, Roles: new[] { "Admin", "User" });
-            var token = _authService.GenerateToken(user);
-            var responseMetadata = new ResponseMetaData<string>()
+            var responseMetadata = new ResponseMetaData<TokenDTO>();
+            TokenDTO tokenDTO = new TokenDTO();
+            var result= await _loginService.UserLogin(loginDTO.Email, loginDTO.Password);
+            if (result == 0)
             {
-                Status = HttpStatusCode.OK,
-                IsError = false,
-                Result = token
-            };
+                responseMetadata = new ResponseMetaData<TokenDTO>()
+                {
+                    ErrorDetails = "User Id and Password is wrong!",
+                    IsError = true,
+                    Status = HttpStatusCode.Unauthorized,
+                    Result= tokenDTO
+
+                };
+            }
+            else
+            {
+                var user = new UserToken(result, loginDTO.Email, Roles: new[] { "Admin", "User" });
+                var token = _authService.GenerateToken(user);
+                tokenDTO= new TokenDTO() { Token=token};
+                responseMetadata = new ResponseMetaData<TokenDTO>()
+                {
+                    Status = HttpStatusCode.OK,
+                    IsError = false,
+                    Result = tokenDTO,
+                    Message="User Logged In Successfully!"
+                };
+            }
+            
             return StatusCode((int)responseMetadata.Status, responseMetadata);
         }
     }

@@ -13,7 +13,7 @@ namespace ZdeskUserPortal.Business
     {
         public MappingProfile()
         {
-            CreateMap<UsersEntity, LoginDTO>();
+            CreateMap<UsersEntity, TokenDTO>();
             CreateMap<LoginDTO, UsersEntity>();
         }
     }

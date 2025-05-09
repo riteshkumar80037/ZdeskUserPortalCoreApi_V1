@@ -38,6 +38,7 @@ namespace ZdeskUserPortalApiCore.JWTToken
         {
             var claims = new ClaimsIdentity();
             claims.AddClaim(new Claim(ClaimTypes.Name, user.Email));
+            claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
 
             foreach (var role in user.Roles)
                 claims.AddClaim(new Claim(ClaimTypes.Role, role));

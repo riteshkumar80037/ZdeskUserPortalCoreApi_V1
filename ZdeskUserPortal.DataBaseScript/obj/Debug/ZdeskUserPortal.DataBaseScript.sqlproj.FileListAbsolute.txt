@@ -1,0 +1,10 @@
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\bin\Debug\ZdeskUserPortal.DataBaseScript.dacpac
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\bin\Debug\ZdeskUserPortal.DataBaseScript.dll
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\bin\Debug\ZdeskUserPortal.DataBaseScript.pdb
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\obj\Debug\ZdeskUserPortal.DataBaseScript.sqlproj.AssemblyReference.cache
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\obj\Debug\Model.xml
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\obj\Debug\refactor.xml
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\obj\Debug\postdeploy.sql
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\obj\Debug\predeploy.sql
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\obj\Debug\ZdeskUserPortal.DataBaseScript.dll
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\obj\Debug\ZdeskUserPortal.DataBaseScript.pdb

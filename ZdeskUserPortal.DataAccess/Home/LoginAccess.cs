@@ -14,7 +14,7 @@ namespace ZdeskUserPortal.DataAccess.Home
     public class LoginAccess : ZdeskDataAccess
     {
         public static LoginAccess Instance { get; } = new LoginAccess();
-        private const string PROC_LASTBUSINESSDAY = "dbo.General_IsHoliday";
+        private const string USER_LOGIN_SELECT = "User_Login_Select";
         private LoginAccess() : base()
         {
         }
@@ -25,10 +25,10 @@ namespace ZdeskUserPortal.DataAccess.Home
         public async Task<UsersEntity> Login(string userEmail,string password)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@CountryCode", userEmail, DbType.String, ParameterDirection.Input);
-            parameters.Add("@InDate", password, DbType.String, ParameterDirection.Input);
+            parameters.Add("@EmailId", userEmail, DbType.String, ParameterDirection.Input);
+            parameters.Add("@Password", password, DbType.String, ParameterDirection.Input);
 
-            return  GetValueByProcedure<UsersEntity, DynamicParameters>(PROC_LASTBUSINESSDAY, parameters, CONNECTION_STRING_NAME);
+            return  GetValueByProcedure<UsersEntity, DynamicParameters>(USER_LOGIN_SELECT, parameters, CONNECTION_STRING_NAME);
 
         }
     }

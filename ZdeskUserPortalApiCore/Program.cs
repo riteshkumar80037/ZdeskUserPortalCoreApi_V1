@@ -20,6 +20,7 @@ using ZdeskUserPortal.Domain.RepositoryInterfaces;
 using ZdeskUserPortal.Business.Services;
 using ZdeskUserPortal.Business.Interface;
 using ZdeskUserPortal.DataAccess.RepositoryServices;
+using ZdeskUserPortal.Business;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -38,7 +39,7 @@ var config = new ConfigurationBuilder()
     .Build();
 
 //Mapper 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddSingleton<IConfiguration>(config);
 // Learn more about configuring Swagger/OpenAPI at
 builder.Services.AddEndpointsApiExplorer();
