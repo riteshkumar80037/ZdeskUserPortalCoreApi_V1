@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj": {}
+    "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj": {
+    "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
         "projectName": "ZdeskUserPortal.DataAccess",
-        "projectPath": "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\ritesh.kumar1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Ritesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ritesh.kumar1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ritesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,14 +22,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj": {
-                "projectPath": "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj"
+              "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj": {
+                "projectPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj"
               }
             }
           }
@@ -47,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -99,25 +95,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj": {
+    "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj",
         "projectName": "ZdeskUserPortal.Domain",
-        "projectPath": "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj",
-        "packagesPath": "C:\\Users\\ritesh.kumar1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ritesh.kumar1\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj",
+        "packagesPath": "C:\\Users\\Ritesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ritesh.kumar1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ritesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -125,6 +117,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -142,8 +135,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -164,7 +156,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

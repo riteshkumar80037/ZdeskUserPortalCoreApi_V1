@@ -19,11 +19,11 @@ namespace ZdeskUserPortalApiCore.Controllers
     public class DashBoardController : ControllerBase
     {
         private readonly ILogger<DashBoardController> _logger;
-        private readonly IBusinessUnit _businessUnit;
-        public DashBoardController(ILogger<DashBoardController> logger, IBusinessUnit businessUnit)
+        private readonly IMaster _master;
+        public DashBoardController(ILogger<DashBoardController> logger, IMaster master)
         {
             _logger = logger;
-            _businessUnit = businessUnit;
+            _master = master;
         }
         [Microsoft.AspNetCore.Mvc.HttpGet(Name = "BusinessUnit")]
         [ProducesResponseType<ResponseMetaData<IEnumerable<BusinessUnitEntity>>>(StatusCodes.Status200OK)]
@@ -33,7 +33,7 @@ namespace ZdeskUserPortalApiCore.Controllers
         {
             var responseMetadata = new ResponseMetaData<IEnumerable<BusinessUnitEntity>>();
             IEnumerable<BusinessUnitEntity> businessUnits;
-            businessUnits = await _businessUnit.GetAllBusinessUnit();
+            businessUnits = await _master.GetAllBusinessUnit();
 
             responseMetadata = new ResponseMetaData<IEnumerable<BusinessUnitEntity>>()
             {

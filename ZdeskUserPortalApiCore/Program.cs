@@ -40,12 +40,22 @@ var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
     .AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: false)
     .Build();
-//Sql
+
+//Sql connection for Entity Framwork
 builder.Services.AddDbContext<ZdeskDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ZdeskConnection")));
-//Mapper 
+
+//Redis Cache Connection
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = "localhost:6379"; // Replace with your Redis connection string
+    options.InstanceName = "SampleInstance";  // Optional prefix for keys
+});
+
+//Auto Mapper 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddSingleton<IConfiguration>(config);
+
 // Learn more about configuring Swagger/OpenAPI at
 builder.Services.AddEndpointsApiExplorer();
 
@@ -87,7 +97,7 @@ var privateKey = builder.Configuration.GetValue<string>("PrivateKey");
 
 
 builder.Services.Configure<AuthSettings>(builder.Configuration);
-
+// Cors
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: "AllowedApisPolicy", policy =>
@@ -107,6 +117,7 @@ builder.Services.AddScoped(typeof(ILoginRepository), typeof(LoginRepositoryServi
 builder.Services.AddScoped<ILogin, LoginServices>();
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepositoryServices<>));
 builder.Services.AddScoped<IBusinessUnit, BusinessUnitServices>();
+builder.Services.AddScoped<IMaster, MasterServices>();
 // Assign the configuration to the static property
 SqlDbConnectionFactory.StaticConfiguration = builder.Configuration;
 

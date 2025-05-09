@@ -10,3 +10,15 @@ C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\Z
 C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\refint\ZdeskUserPortal.DTOModel.dll
 C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ZdeskUserPortal.DTOModel.pdb
 C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ref\ZdeskUserPortal.DTOModel.dll
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\bin\Debug\net8.0\ZdeskUserPortal.DTOModel.deps.json
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\bin\Debug\net8.0\ZdeskUserPortal.DTOModel.dll
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\bin\Debug\net8.0\ZdeskUserPortal.DTOModel.pdb
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ZdeskUserPortal.DTOModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ZdeskUserPortal.DTOModel.AssemblyInfoInputs.cache
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ZdeskUserPortal.DTOModel.AssemblyInfo.cs
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ZdeskUserPortal.DTOModel.csproj.CoreCompileInputs.cache
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ZdeskUserPortal.DTOModel.sourcelink.json
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ZdeskUserPortal.DTOModel.dll
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\refint\ZdeskUserPortal.DTOModel.dll
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ZdeskUserPortal.DTOModel.pdb
+C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DTOModel\obj\Debug\net8.0\ref\ZdeskUserPortal.DTOModel.dll
