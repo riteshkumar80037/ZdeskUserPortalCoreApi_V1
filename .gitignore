@@ -90,3 +90,13 @@
 *.json
 /ZdeskUserPortalApiCore/.vs/ZdeskUserPortalApiCore/v17/DocumentLayout.json
 *.config
+/ZdeskUserPortal.Business/bin/Debug/net8.0/ZdeskUserPortal.Business.deps.json
+/ZdeskUserPortal.Business/bin/Debug/net8.0/ZdeskUserPortal.Domain.dll
+/ZdeskUserPortal.Business/bin/Debug/net8.0/ZdeskUserPortal.Domain.pdb
+/ZdeskUserPortalApiCore/bin/Debug/net8.0/ZdeskUserPortal.Domain.dll
+/ZdeskUserPortalApiCore/.vs/ZdeskUserPortalApiCore/v17
+/ZdeskUserPortalApiCore/bin/Debug/net8.0/ZdeskUserPortal.Domain.pdb
+/ZdeskUserPortalApiCore/bin/Debug/net8.0/ZdeskUserPortalApiCore.deps.json
+/ZdeskUserPortal.DataBaseScript/obj/Debug/ZdeskUserPortal.DataBaseScript.sqlproj.FileListAbsolute.txt
+*.dbmdl
+*.jfm

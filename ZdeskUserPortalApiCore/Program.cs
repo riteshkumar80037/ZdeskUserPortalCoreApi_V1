@@ -21,6 +21,9 @@ using ZdeskUserPortal.Business.Services;
 using ZdeskUserPortal.Business.Interface;
 using ZdeskUserPortal.DataAccess.RepositoryServices;
 using ZdeskUserPortal.Business;
+using Microsoft.EntityFrameworkCore;
+using System;
+using ZdeskUserPortal.DataAccess.EntityFramwork.Context;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,7 +40,9 @@ var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
     .AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: false)
     .Build();
-
+//Sql
+builder.Services.AddDbContext<ZdeskDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ZdeskConnection")));
 //Mapper 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddSingleton<IConfiguration>(config);
@@ -100,6 +105,8 @@ builder.Services.AddTransient<IDbConnectionFactory, SqlDbConnectionFactory>();
 builder.Services.AddTransient<LoginAccess>();
 builder.Services.AddScoped(typeof(ILoginRepository), typeof(LoginRepositoryServices));
 builder.Services.AddScoped<ILogin, LoginServices>();
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepositoryServices<>));
+builder.Services.AddScoped<IBusinessUnit, BusinessUnitServices>();
 // Assign the configuration to the static property
 SqlDbConnectionFactory.StaticConfiguration = builder.Configuration;
 
@@ -153,6 +160,7 @@ if (enableSwagger)
 // Global Exception Middleware
 app.UseGlobalExceptionHandler();
 app.UseCors("AllowedApisPolicy");
+app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();

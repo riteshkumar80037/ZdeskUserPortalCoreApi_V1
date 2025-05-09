@@ -9,11 +9,11 @@ namespace ZdeskUserPortal.Domain.Model
 {
     public class BaseEntity
     {
-        public BigInteger Id { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public int CreatedBy { get; set; }
-        public DateTime? UpdatedDate { get; set; }
-        public int UpdatedBy { get; set; }
-        public bool Active { get; set; }
+        public virtual int Id { get; set; }
+        public virtual DateTime? CreatedDate { get; set; }
+        public virtual int? CreatedBy { get; set; } = 0;
+        public virtual DateTime? UpdatedDate { get; set; }
+        public virtual int? UpdatedBy { get; set; } = 0;
+        public virtual bool? Active { get; set; } = false;
     }
 }
