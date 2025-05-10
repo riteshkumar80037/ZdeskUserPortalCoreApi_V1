@@ -26,7 +26,7 @@ namespace ZdeskUserPortalApiCore.JWTToken
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = GenerateClaims(user),
-                Expires = DateTime.Now.AddMinutes(2),
+                Expires = DateTime.Now.AddMinutes(15),
                 SigningCredentials = credentials,
                 Issuer="abc",
                 Audience="abc"

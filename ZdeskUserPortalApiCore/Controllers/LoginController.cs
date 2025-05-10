@@ -1,9 +1,6 @@
-﻿using System.Net;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Net;
 using ZdeskUserPortal.Business.Interface;
-using ZdeskUserPortal.Business.Services;
 using ZdeskUserPortal.Domain.Model.Login;
 using ZdeskUserPortal.DTOModel;
 using ZdeskUserPortalApiCore.Common;
@@ -63,6 +60,8 @@ namespace ZdeskUserPortalApiCore.Controllers
             
             return StatusCode((int)responseMetadata.Status, responseMetadata);
         }
+
+
 
         [HttpPost("refresh-token", Name = "RefreshToken")]
         [ProducesResponseType<ResponseMetaData<TokenDTO>>(StatusCodes.Status200OK)]

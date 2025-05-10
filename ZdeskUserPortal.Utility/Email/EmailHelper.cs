@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using ZdeskUserPortal.Domain.Model.Master;
 
 namespace ZdeskUserPortal.Utility.Email
 {
     public static class EmailHelper
     {
+        public static SmtpEntity smtpEntity { get; set; }
         public const string DELIMITERS = ",;";
+
         public static bool IsEmailAddressValid(string emailAddress)
         {
             if (string.IsNullOrWhiteSpace(emailAddress))
@@ -42,7 +46,7 @@ namespace ZdeskUserPortal.Utility.Email
                 mail.Priority = priority;
 
                 // set the subject and email addresses
-               // mail.From = new MailAddress(string.IsNullOrWhiteSpace(fromAddress) ? FromAddress : fromAddress);
+                mail.From = new MailAddress(string.IsNullOrWhiteSpace(fromAddress) ? smtpEntity.FromAddress : fromAddress);
                 mail.Subject = subject;
 
                 if (!string.IsNullOrWhiteSpace(toAddresses))
@@ -122,39 +126,39 @@ namespace ZdeskUserPortal.Utility.Email
 
                 var sent = false;
 
-                foreach (var smtpHost in ConfigurationSection?.SmtpHosts)
+
+
+
+                try
                 {
-                    if (string.IsNullOrWhiteSpace(smtpHost.Host) || smtpHost.Port < ushort.MinValue || smtpHost.Port > ushort.MaxValue)
+                    using (var smtpClient = new SmtpClient())
                     {
-                        continue;
-                    }
+                        smtpClient.Host = smtpEntity.ServiceProtocol;
+                        smtpClient.Port = (int)smtpEntity.SmptPort;
+                        smtpClient.Timeout = 20000;
+                        smtpClient.Credentials = new NetworkCredential(smtpEntity.UserName, smtpEntity.Password);
+                        smtpClient.EnableSsl = true;
+                        smtpClient.Send(mail);
 
-                    try
-                    {
-                        using (var smtpClient = new SmtpClient())
-                        {
-                            smtpClient.Host = smtpHost.Host;
-                            smtpClient.Port = smtpHost.Port;
-                            smtpClient.Timeout = smtpHost.Timeout;
-                            smtpClient.Send(mail);
+                        // email successfully sent, break out of the hosts loop.
+                        sent = true;
 
-                            // email successfully sent, break out of the hosts loop.
-                            sent = true;
-                            break;
-                        }
-                    }
-                    catch (SmtpException)
-                    {
-                        // exception occurred while sending the email to the host, swallow the exception and try the next host
                     }
                 }
+                catch (SmtpException)
+                {
+                    // exception occurred while sending the email to the host, swallow the exception and try the next host
+                }
+
 
                 if (!sent)
                 {
                     throw new ApplicationException($"An error occurred while trying to send an email via smtp to '{toAddresses}'; Subject '{subject}'.");
                 }
-            }
-        }
 
+            }
+
+        }
     }
 }
+

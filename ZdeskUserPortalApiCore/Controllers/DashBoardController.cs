@@ -25,7 +25,7 @@ namespace ZdeskUserPortalApiCore.Controllers
             _logger = logger;
             _master = master;
         }
-        [Microsoft.AspNetCore.Mvc.HttpGet(Name = "BusinessUnit")]
+        [Microsoft.AspNetCore.Mvc.HttpPost("businessUnit", Name = "BusinessUnit")]
         [ProducesResponseType<ResponseMetaData<IEnumerable<BusinessUnitEntity>>>(StatusCodes.Status200OK)]
         [ProducesResponseType<ResponseMetaData<IEnumerable<BusinessUnitEntity>>>(StatusCodes.Status400BadRequest)]
         [ProducesResponseType<ResponseMetaData<IEnumerable<BusinessUnitEntity>>>(StatusCodes.Status500InternalServerError)]

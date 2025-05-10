@@ -551,6 +551,9 @@
         }
       },
       "ZdeskUserPortal.Utility/1.0.0": {
+        "dependencies": {
+          "ZdeskUserPortal.Domain": "1.0.0"
+        },
         "runtime": {
           "ZdeskUserPortal.Utility.dll": {
             "assemblyVersion": "1.0.0",
