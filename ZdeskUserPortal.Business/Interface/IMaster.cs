@@ -10,5 +10,6 @@ namespace ZdeskUserPortal.Business.Interface
     public interface IMaster
     {
         Task<IEnumerable<BusinessUnitEntity>> GetAllBusinessUnit();
+
     }
 }

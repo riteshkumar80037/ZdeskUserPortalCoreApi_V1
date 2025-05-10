@@ -10,15 +10,3 @@ C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\Z
 C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\refint\ZdeskUserPortal.Domain.dll
 C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ZdeskUserPortal.Domain.pdb
 C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ref\ZdeskUserPortal.Domain.dll
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\bin\Debug\net8.0\ZdeskUserPortal.Domain.deps.json
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\bin\Debug\net8.0\ZdeskUserPortal.Domain.dll
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\bin\Debug\net8.0\ZdeskUserPortal.Domain.pdb
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ZdeskUserPortal.Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ZdeskUserPortal.Domain.AssemblyInfoInputs.cache
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ZdeskUserPortal.Domain.AssemblyInfo.cs
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ZdeskUserPortal.Domain.csproj.CoreCompileInputs.cache
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ZdeskUserPortal.Domain.sourcelink.json
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ZdeskUserPortal.Domain.dll
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\refint\ZdeskUserPortal.Domain.dll
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ZdeskUserPortal.Domain.pdb
-C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Domain\obj\Debug\net8.0\ref\ZdeskUserPortal.Domain.dll
