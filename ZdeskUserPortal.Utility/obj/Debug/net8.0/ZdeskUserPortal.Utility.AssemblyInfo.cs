@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZdeskUserPortal.Utility")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b03547a39865b6959c06a6556e07f89dc327e14d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec39173165413126ac37b95a3ddf20b8fcc84d61")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZdeskUserPortal.Utility")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZdeskUserPortal.Utility")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
