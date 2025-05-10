@@ -8,8 +8,11 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using ZdeskUserPortal.Business.Interface;
+using ZdeskUserPortal.Domain.Model.Login;
 using ZdeskUserPortal.Domain.Model.Master;
 using ZdeskUserPortal.Domain.RepositoryInterfaces;
+using ZdeskUserPortal.Domain.RepositoryInterfaces.Login;
+using ZdeskUserPortal.Utility;
 
 namespace ZdeskUserPortal.Business.Services
 {
@@ -25,23 +28,32 @@ namespace ZdeskUserPortal.Business.Services
         }
         public async Task<IEnumerable<BusinessUnitEntity>> GetAllBusinessUnit()
         {
-            IEnumerable<BusinessUnitEntity> businessUnitEntities=null;
-            string businessUnits = await _cache.GetStringAsync(RedisKey.BUSINESSUNIT);
+            try
+            {
+                IEnumerable<BusinessUnitEntity> businessUnitEntities = null;
+                string businessUnits = await _cache.GetStringAsync(RedisKey.BUSINESSUNIT);
 
-            if (string.IsNullOrEmpty(businessUnits))
-            {
-                businessUnitEntities= await _businessUnitRepo.GetAll(x => x.Active == true && x.BusinessUnitName != null);
-                var jsonBusinessUnits = JsonSerializer.Serialize(businessUnitEntities);
-                await _cache.SetStringAsync(RedisKey.BUSINESSUNIT, jsonBusinessUnits, new DistributedCacheEntryOptions
+                if (string.IsNullOrEmpty(businessUnits))
                 {
-                    AbsoluteExpirationRelativeToNow = TimeSpan.FromDays(60)
-                });
+                    businessUnitEntities = await _businessUnitRepo.GetAll(x => x.Active == true && x.BusinessUnitName != null);
+                    var jsonBusinessUnits = JsonSerializer.Serialize(businessUnitEntities);
+                    await _cache.SetStringAsync(RedisKey.BUSINESSUNIT, jsonBusinessUnits, new DistributedCacheEntryOptions
+                    {
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromDays(60)
+                    });
+                }
+                else
+                {
+                    businessUnitEntities = JsonSerializer.Deserialize<IEnumerable<BusinessUnitEntity>>(businessUnits);
+                }
+                return businessUnitEntities;
             }
-            else
+            catch (DataAccessException ex)
             {
-                businessUnitEntities = JsonSerializer.Deserialize<IEnumerable<BusinessUnitEntity>>(businessUnits);
+                throw new BusinessException($"Error in business logic while getting user details.{GetType().FullName}.", ex);
             }
-            return businessUnitEntities;
+
+           
         }
     }
 }

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZdeskUserPortal.DTOModel", 
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ZdeskUserPortal.DataBaseScript", "..\ZdeskUserPortal.DataBaseScript\ZdeskUserPortal.DataBaseScript.sqlproj", "{696C576F-CE02-4A53-A84B-C08074B8E10A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZdeskUserPortal.Utility", "..\ZdeskUserPortal.Utility\ZdeskUserPortal.Utility.csproj", "{59FA7534-2634-4972-9A9F-BABB08E81696}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{696C576F-CE02-4A53-A84B-C08074B8E10A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{696C576F-CE02-4A53-A84B-C08074B8E10A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{696C576F-CE02-4A53-A84B-C08074B8E10A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{59FA7534-2634-4972-9A9F-BABB08E81696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59FA7534-2634-4972-9A9F-BABB08E81696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59FA7534-2634-4972-9A9F-BABB08E81696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59FA7534-2634-4972-9A9F-BABB08E81696}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="ZdeskUserPortal.DataBaseScript.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\RITESH\SOURCE\REPOS\RITESHKUMAR80037\ZDESKUSERPORTALCOREAPI_V1\ZDESKUSERPORTAL.DATABASESCRIPT\OBJ\DEBUG\ZDESKUSERPORTAL.DATABASESCRIPT.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\RITESH.KUMAR1\SOURCE\REPOS\RITESHKUMAR80037\ZDESKUSERPORTALCOREAPI_V1\ZDESKUSERPORTAL.DATABASESCRIPT\OBJ\DEBUG\ZDESKUSERPORTAL.DATABASESCRIPT.DLL" />
 			<Metadata Name="AssemblyName" Value="ZdeskUserPortal.DataBaseScript" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\obj\Debug\ZdeskUserPortal.DataBaseScript.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataBaseScript\obj\Debug\ZdeskUserPortal.DataBaseScript.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>

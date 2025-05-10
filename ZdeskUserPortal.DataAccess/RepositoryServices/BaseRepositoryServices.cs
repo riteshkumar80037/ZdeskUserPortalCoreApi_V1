@@ -5,9 +5,11 @@ using System.Linq.Expressions;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using ZdeskUserPortal.DataAccess.EntityFramwork.Context;
 using ZdeskUserPortal.Domain.RepositoryInterfaces;
+using ZdeskUserPortal.Utility;
 
 namespace ZdeskUserPortal.DataAccess.RepositoryServices
 {
@@ -34,16 +36,23 @@ namespace ZdeskUserPortal.DataAccess.RepositoryServices
 
                 return await query.ToListAsync();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                throw;
+                throw new DataAccessException($"Error in Data Access while getting All Record{GetType().FullName}..", ex);
             }
 
         }
 
         public async Task<T> GetById(BigInteger Id)
         {
-           return await _dbSet.Where(x => x.Equals(Id)).FirstOrDefaultAsync();
+            try
+            {
+                return await _dbSet.Where(x => x.Equals(Id)).FirstOrDefaultAsync();
+            }
+            catch (SqlException ex)
+            {
+                throw new DataAccessException("Error in Data Access while getting ById Record.", ex);
+            }
         }
     }
 }

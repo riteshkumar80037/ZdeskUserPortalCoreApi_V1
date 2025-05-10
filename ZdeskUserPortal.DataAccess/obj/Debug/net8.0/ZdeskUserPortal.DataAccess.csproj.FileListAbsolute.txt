@@ -42,3 +42,5 @@ C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\Z
 C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataAccess\bin\Debug\net8.0\ZdeskUserPortal.Domain.dll
 C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataAccess\bin\Debug\net8.0\ZdeskUserPortal.Domain.pdb
 C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataAccess\obj\Debug\net8.0\ZdeskUse.7E1A710E.Up2Date
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataAccess\bin\Debug\net8.0\ZdeskUserPortal.Utility.dll
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.DataAccess\bin\Debug\net8.0\ZdeskUserPortal.Utility.pdb

@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ZdeskUserPortal.Domain\ZdeskUserPortal.Domain.csproj" />
     <ProjectReference Include="..\ZdeskUserPortal.DTOModel\ZdeskUserPortal.DTOModel.csproj" />
+    <ProjectReference Include="..\ZdeskUserPortal.Utility\ZdeskUserPortal.Utility.csproj" />
   </ItemGroup>
 
 </Project>

@@ -8,6 +8,6 @@ namespace ZdeskUserPortal.Business
 {
     public static class RedisKey
     {
-        public const string BUSINESSUNIT = "BusinessUnit45";
+        public const string BUSINESSUNIT = "BusinessUnit";
     }
 }

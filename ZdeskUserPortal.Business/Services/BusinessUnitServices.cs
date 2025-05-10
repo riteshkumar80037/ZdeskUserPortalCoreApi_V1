@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ZdeskUserPortal.Business.Interface;
 using ZdeskUserPortal.Domain.Model.Master;
 using ZdeskUserPortal.Domain.RepositoryInterfaces;
+using ZdeskUserPortal.Utility;
 
 namespace ZdeskUserPortal.Business.Services
 {
@@ -20,7 +21,15 @@ namespace ZdeskUserPortal.Business.Services
         }
         public async Task<IEnumerable<BusinessUnitEntity>> GetAllBusinessUnit()
         {
-           return await _businessUnitRepo.GetAll(x=>x.Active==true && x.BusinessUnitName !=null);
+            try
+            {
+                return await _businessUnitRepo.GetAll(x => x.Active == true && x.BusinessUnitName != null);
+            }
+            catch (DataAccessException ex)
+            {
+                throw new BusinessException($"Error in business logic while getting user details.{GetType().FullName}.", ex);
+            }
+            
         }
     }
 }

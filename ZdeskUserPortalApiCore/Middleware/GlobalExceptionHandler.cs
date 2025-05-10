@@ -1,7 +1,9 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using ZdeskUserPortal.Utility;
 using ZdeskUserPortalApiCore.Common;
 using ZdeskUserPortalApiCore.Constant;
 
@@ -28,6 +30,38 @@ namespace ZdeskUserPortalApiCore.Middleware
             try
             {
                 await _next(context);
+            }
+            catch (BusinessException ex)
+            {
+                ResponseMetaData<string> responseMetadata = new()
+                {
+                    Status = HttpStatusCode.InternalServerError,
+                    IsError = true,
+                    ErrorDetails = CommonExceptionConstants.SomeUnknownError
+                };
+
+                var serializedResponseMetadata = JsonConvert.SerializeObject(responseMetadata);
+                _logger.LogError(ex, "Business error occurred: {Message}", JsonConvert.SerializeObject(serializedResponseMetadata));
+
+                context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                context.Response.ContentType = "application/json";
+                await context.Response.WriteAsync(serializedResponseMetadata);
+            }
+            catch (DataAccessException ex)
+            {
+                ResponseMetaData<string> responseMetadata = new()
+                {
+                    Status = HttpStatusCode.InternalServerError,
+                    IsError = true,
+                    ErrorDetails = CommonExceptionConstants.SomeUnknownError
+                };
+
+                var serializedResponseMetadata = JsonConvert.SerializeObject(responseMetadata);
+                _logger.LogError(ex, "DataAccessException error occurred: {Message}", JsonConvert.SerializeObject(serializedResponseMetadata));
+
+                context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                context.Response.ContentType = "application/json";
+                await context.Response.WriteAsync(serializedResponseMetadata);
             }
             catch (Exception exception)
             {

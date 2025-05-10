@@ -34,3 +34,5 @@ C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUse
 C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Business\obj\Debug\net8.0\refint\ZdeskUserPortal.Business.dll
 C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Business\obj\Debug\net8.0\ZdeskUserPortal.Business.pdb
 C:\Users\Ritesh\Source\Repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Business\obj\Debug\net8.0\ref\ZdeskUserPortal.Business.dll
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Business\bin\Debug\net8.0\ZdeskUserPortal.Utility.dll
+C:\Users\ritesh.kumar1\source\repos\riteshkumar80037\ZdeskUserPortalCoreApi_V1\ZdeskUserPortal.Business\bin\Debug\net8.0\ZdeskUserPortal.Utility.pdb
