@@ -6,10 +6,10 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZdeskUserPortal.Domain.Model
+namespace ZdeskUserPortal.Domain.Model.Master
 {
     [Table("zdesk_m_business_unit_tbl")]
-    public class BusinessUnitEntity:BaseEntity
+    public class BusinessUnitEntity : BaseEntity
     {
         [Column("Business_Unit")]
         public string? BusinessUnitName { get; set; } = string.Empty;

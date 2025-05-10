@@ -4,7 +4,7 @@ using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZdeskUserPortal.Domain.Model;
+using ZdeskUserPortal.Domain.Model.Master;
 
 namespace ZdeskUserPortal.Business.Interface
 {

@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using ZdeskUserPortal.Business.Interface;
-using ZdeskUserPortal.Domain.Model;
-using ZdeskUserPortal.Domain.RepositoryInterfaces;
+using ZdeskUserPortal.Domain.Model.Login;
+using ZdeskUserPortal.Domain.RepositoryInterfaces.Login;
 using ZdeskUserPortal.DTOModel;
 
 namespace ZdeskUserPortal.Business.Services

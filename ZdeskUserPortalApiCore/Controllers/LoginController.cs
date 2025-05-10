@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using ZdeskUserPortal.Business.Interface;
 using ZdeskUserPortal.Business.Services;
-using ZdeskUserPortal.Domain.Model;
+using ZdeskUserPortal.Domain.Model.Login;
 using ZdeskUserPortal.DTOModel;
 using ZdeskUserPortalApiCore.Common;
 using ZdeskUserPortalApiCore.DTOModel;

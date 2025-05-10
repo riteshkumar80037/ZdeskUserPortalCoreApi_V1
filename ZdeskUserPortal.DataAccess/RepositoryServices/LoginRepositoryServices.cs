@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZdeskUserPortal.DataAccess.Home;
 using ZdeskUserPortal.Domain.Model;
-using ZdeskUserPortal.Domain.RepositoryInterfaces;
+using ZdeskUserPortal.Domain.RepositoryInterfaces.Login;
 
 namespace ZdeskUserPortal.DataAccess.RepositoryServices
 {

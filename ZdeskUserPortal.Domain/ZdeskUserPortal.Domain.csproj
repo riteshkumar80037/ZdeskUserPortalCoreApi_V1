@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\Dashboard\" />
+    <Folder Include="Model\Incident\" />
+    <Folder Include="Model\ServiceRequest\" />
+    <Folder Include="RepositoryInterfaces\Incident\" />
+    <Folder Include="RepositoryInterfaces\Dashboard\" />
+    <Folder Include="RepositoryInterfaces\Master\" />
+    <Folder Include="RepositoryInterfaces\ServiceRequest\" />
+  </ItemGroup>
+
 </Project>

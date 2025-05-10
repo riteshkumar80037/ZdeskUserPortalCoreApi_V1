@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\ZdeskUserPortal.DTOModel.csproj": {}
+    "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\ZdeskUserPortal.DTOModel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\ZdeskUserPortal.DTOModel.csproj": {
+    "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\ZdeskUserPortal.DTOModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\ZdeskUserPortal.DTOModel.csproj",
+        "projectUniqueName": "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\ZdeskUserPortal.DTOModel.csproj",
         "projectName": "ZdeskUserPortal.DTOModel",
-        "projectPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\ZdeskUserPortal.DTOModel.csproj",
+        "projectPath": "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\ZdeskUserPortal.DTOModel.csproj",
         "packagesPath": "C:\\Users\\Ritesh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\obj\\",
+        "outputPath": "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DTOModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ritesh\\AppData\\Roaming\\NuGet\\NuGet.Config",

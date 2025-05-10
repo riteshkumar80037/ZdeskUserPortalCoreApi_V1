@@ -24,6 +24,7 @@ using ZdeskUserPortal.Business;
 using Microsoft.EntityFrameworkCore;
 using System;
 using ZdeskUserPortal.DataAccess.EntityFramwork.Context;
+using ZdeskUserPortal.Domain.RepositoryInterfaces.Login;
 
 
 var builder = WebApplication.CreateBuilder(args);

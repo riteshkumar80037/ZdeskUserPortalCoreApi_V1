@@ -2107,11 +2107,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
       "projectName": "ZdeskUserPortal.DataAccess",
-      "projectPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
+      "projectPath": "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
       "packagesPath": "C:\\Users\\Ritesh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ritesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2129,8 +2129,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj": {
-              "projectPath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj"
+            "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj": {
+              "projectPath": "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.Domain\\ZdeskUserPortal.Domain.csproj"
             }
           }
         }

@@ -1,7 +1,8 @@
 ﻿
 using System;
 using Microsoft.EntityFrameworkCore;
-using ZdeskUserPortal.Domain.Model;
+using ZdeskUserPortal.Domain.Model.Login;
+using ZdeskUserPortal.Domain.Model.Master;
 using ZdeskUserPortal.Domain.RepositoryInterfaces;
 
 namespace ZdeskUserPortal.DataAccess.EntityFramwork.Context

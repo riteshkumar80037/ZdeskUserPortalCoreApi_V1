@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZdeskUserPortal.Business.Interface;
-using ZdeskUserPortal.Domain.Model;
+using ZdeskUserPortal.Domain.Model.Master;
 using ZdeskUserPortal.Domain.RepositoryInterfaces;
 
 namespace ZdeskUserPortal.Business.Services

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pIgJwzXjVgU=",
+  "dgSpecHash": "pA77e5W9e5A=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ritesh\\Source\\Repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\Ritesh\\source\\repos\\riteshkumar80037\\ZdeskUserPortalCoreApi_V1\\ZdeskUserPortal.DataAccess\\ZdeskUserPortal.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ritesh\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Ritesh\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

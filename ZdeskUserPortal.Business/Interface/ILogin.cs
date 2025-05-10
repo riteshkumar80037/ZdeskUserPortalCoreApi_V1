@@ -4,7 +4,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using ZdeskUserPortal.Domain.Model;
+using ZdeskUserPortal.Domain.Model.Login;
 using ZdeskUserPortal.DTOModel;
 
 namespace ZdeskUserPortal.Business.Interface

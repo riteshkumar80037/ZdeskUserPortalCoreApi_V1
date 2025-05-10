@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using ZdeskUserPortal.Business.Interface;
-using ZdeskUserPortal.Domain.Model;
+using ZdeskUserPortal.Domain.Model.Master;
 using ZdeskUserPortal.Domain.RepositoryInterfaces;
 
 namespace ZdeskUserPortal.Business.Services

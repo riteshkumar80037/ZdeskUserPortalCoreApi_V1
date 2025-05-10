@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZdeskUserPortal.Domain.Model;
+using ZdeskUserPortal.Domain.Model.Login;
 
-namespace ZdeskUserPortal.Domain.RepositoryInterfaces
+namespace ZdeskUserPortal.Domain.RepositoryInterfaces.Login
 {
     public interface IRefereshToken
     {

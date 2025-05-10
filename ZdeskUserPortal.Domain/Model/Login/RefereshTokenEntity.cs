@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZdeskUserPortal.Domain.Model
+namespace ZdeskUserPortal.Domain.Model.Login
 {
     [Table("RefereshToken")]
     public class RefereshTokenEntity

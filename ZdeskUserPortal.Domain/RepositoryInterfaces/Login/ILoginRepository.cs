@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZdeskUserPortal.Domain.Model;
 
-namespace ZdeskUserPortal.Domain.RepositoryInterfaces
+namespace ZdeskUserPortal.Domain.RepositoryInterfaces.Login
 {
     public interface ILoginRepository
     {

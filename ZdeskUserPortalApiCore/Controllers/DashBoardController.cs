@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ZdeskUserPortal.Business.Interface;
 using ZdeskUserPortal.Business.Services;
-using ZdeskUserPortal.Domain.Model;
 using ZdeskUserPortal.DTOModel;
 using ZdeskUserPortalApiCore.Common;
 using ZdeskUserPortalApiCore.DTOModel;
 using ZdeskUserPortalApiCore.JWTToken;
 using Microsoft.AspNetCore.Authorization;
+using ZdeskUserPortal.Domain.Model.Master;
 
 namespace ZdeskUserPortalApiCore.Controllers
 {

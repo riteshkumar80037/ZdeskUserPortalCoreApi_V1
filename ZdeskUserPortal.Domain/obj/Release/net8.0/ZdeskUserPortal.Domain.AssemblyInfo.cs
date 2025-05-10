@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZdeskUserPortal.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ac41480c97efa65f279d709e388d18c1c2dc58b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3a84ba23201e661bd8874e3670df4d13a224637")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZdeskUserPortal.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZdeskUserPortal.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
