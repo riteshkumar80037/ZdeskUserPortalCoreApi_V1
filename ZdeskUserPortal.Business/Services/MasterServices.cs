@@ -24,19 +24,55 @@ namespace ZdeskUserPortal.Business.Services
         private readonly IBaseRepository<BusinessUnitEntity> _businessUnitRepo;
         private readonly IBaseRepository<OrganizationEntity> _organazationRepo;
         private readonly IBaseRepository<SmtpEntity> _smtpRepo;
+        private readonly IBaseRepository<EmailTemplateEntity> _emailTemplateRepo;
         private readonly IDistributedCache _cache;
         private readonly IMapper _mapper;
 
         public MasterServices(IBaseRepository<BusinessUnitEntity> businessUnitRepository,
             IBaseRepository<OrganizationEntity> organizationRepository, IDistributedCache cache,
-            IMapper mapper, IBaseRepository<SmtpEntity> smtpRepo)
+            IMapper mapper, IBaseRepository<SmtpEntity> smtpRepo, IBaseRepository<EmailTemplateEntity> emailTemplateRepo)
         {
             _businessUnitRepo = businessUnitRepository;
             _organazationRepo = organizationRepository;
             _cache = cache;
             _mapper = mapper;
             _smtpRepo = smtpRepo;
+            _emailTemplateRepo = emailTemplateRepo;
         }
+
+        public async Task<EmailTemplateEntity> EmailTemplateDetail(string templateName)
+        {
+            EmailTemplateEntity emailTemplateEntity = new EmailTemplateEntity();
+            try
+            {
+
+                var emailTemplateCache = await _cache.GetStringAsync(RedisKey.EMAILTEMPLATE);
+
+                if (string.IsNullOrEmpty(emailTemplateCache))
+                {
+                    var resutl = await _emailTemplateRepo.GetAll(x => x.Active == true);
+                    emailTemplateEntity = resutl.Where(x => x.TemplateName == templateName).FirstOrDefault();
+                    var jsonSmtp = JsonSerializer.Serialize(resutl);
+                    await _cache.SetStringAsync(RedisKey.EMAILTEMPLATE, jsonSmtp, new DistributedCacheEntryOptions
+                    {
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromDays(60)
+                    });
+                }
+                else
+                {
+                    var emailTemplateResult = JsonSerializer.Deserialize<IEnumerable<EmailTemplateEntity>>(emailTemplateCache);
+                    emailTemplateEntity=emailTemplateResult.Where(x=>x.TemplateName== templateName).FirstOrDefault();
+                 }
+                return emailTemplateEntity;
+
+            }
+            catch (DataAccessException ex)
+            {
+                throw new BusinessException($"Error in business logic while getting user details.{GetType().FullName}.", ex);
+            }
+
+        }
+
         public async Task<IEnumerable<BusinessUnitEntity>> GetAllBusinessUnit()
         {
             try
@@ -67,11 +103,12 @@ namespace ZdeskUserPortal.Business.Services
            
         }
 
-        public async Task<LogoDTO> OrganizationDetail()
+        public async Task<OrganizationEntity> OrganizationDetail()
         {
+            OrganizationEntity organizationEntity = null;
             try
             {
-                OrganizationEntity organizationEntity = null;
+                
                 var organizationCache = await _cache.GetStringAsync(RedisKey.ORGANIZATION);
 
                 if (string.IsNullOrEmpty(organizationCache))
@@ -87,8 +124,9 @@ namespace ZdeskUserPortal.Business.Services
                 {
                     organizationEntity = JsonSerializer.Deserialize<OrganizationEntity>(organizationCache);
                 }
-                return _mapper.Map<LogoDTO>(organizationEntity);
-                
+                return organizationEntity;
+
+
             }
             catch (DataAccessException ex)
             {
@@ -106,7 +144,7 @@ namespace ZdeskUserPortal.Business.Services
 
                 if (string.IsNullOrEmpty(smtpCache))
                 {
-                    var resutl = await _smtpRepo.GetAll();
+                    var resutl = await _smtpRepo.GetAll(x=>x.Active==true);
                     var jsonSmtp = JsonSerializer.Serialize(resutl.FirstOrDefault());
                     await _cache.SetStringAsync(RedisKey.SMTP, jsonSmtp, new DistributedCacheEntryOptions
                     {

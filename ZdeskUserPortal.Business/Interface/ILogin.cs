@@ -15,5 +15,6 @@ namespace ZdeskUserPortal.Business.Interface
         Task<string> GenerateRefreshToken();
         Task<RefereshTokenEntity> getByToken(string token);
         Task<RefereshTokenEntity> update(string token, RefereshTokenEntity refereshTokenEntity);
+        Task<bool> SendOTP(string email);
     }
 }

@@ -16,5 +16,8 @@ namespace ZdeskUserPortal.DataAccess.EntityFramwork.Context
         public DbSet<RefereshTokenEntity> RefreshTokens { get; set; }
         public DbSet<OrganizationEntity> Organization { get; set; }
         public DbSet<SmtpEntity> Smtp { get; set; }
+        public DbSet<UsersEntity> User { get; set; }
+        public DbSet<EmailTemplateEntity> EmailTemplate { get; set; }
+        
     }
 }

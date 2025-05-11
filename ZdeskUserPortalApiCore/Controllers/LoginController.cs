@@ -112,5 +112,41 @@ namespace ZdeskUserPortalApiCore.Controllers
 
             }
         }
+
+        [HttpGet("forgotPassword", Name = "ForgotPassword")]
+        [ProducesResponseType<ResponseMetaData<string>>(StatusCodes.Status200OK)]
+        [ProducesResponseType<ResponseMetaData<string>>(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType<ResponseMetaData<string>>(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            var responseMetadata = new ResponseMetaData<string>();            
+            var result = await _loginService.SendOTP(email);
+            if(result)
+            {
+                responseMetadata = new ResponseMetaData<string>()
+                {
+                    ErrorDetails = "",
+                    IsError = false,
+                    Status = HttpStatusCode.OK,
+                    Result = "OTP has been sent to your register Email Id."
+
+                };
+
+            }
+            else
+            {
+                responseMetadata = new ResponseMetaData<string>()
+                {
+                    ErrorDetails = "",
+                    IsError = false,
+                    Status = HttpStatusCode.Unauthorized,
+                    Result = "User Email Id not found."
+
+                };
+            }
+            
+
+            return StatusCode((int)responseMetadata.Status, responseMetadata);
+        }
     }
 }

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using ZdeskUserPortal.Domain.Model;
 using ZdeskUserPortal.Domain.Model.Login;
+using ZdeskUserPortal.Domain.Model.Master;
 using ZdeskUserPortal.DTOModel;
 
 namespace ZdeskUserPortal.Business

@@ -11,6 +11,7 @@ using ZdeskUserPortal.Domain.Model.Login;
 using ZdeskUserPortal.Domain.RepositoryInterfaces.Login;
 using ZdeskUserPortal.DTOModel;
 using ZdeskUserPortal.Utility;
+using ZdeskUserPortal.Utility.Email;
 
 namespace ZdeskUserPortal.Business.Services
 {
@@ -18,12 +19,18 @@ namespace ZdeskUserPortal.Business.Services
     {
         private readonly ILoginRepository _loginRepository;
         private readonly IMapper _mapper;
+        private readonly IUser _userService;
+        private readonly IMaster _masterService;
+        private readonly IEmailTemplate _emaiTemplateService;
         private readonly IRefereshToken _refereshToken;
-        public LoginServices(ILoginRepository loginRepository, IMapper mapper, IRefereshToken refereshToken)
+        public LoginServices(ILoginRepository loginRepository, IMapper mapper, IRefereshToken refereshToken, IUser userService, IMaster masterService,IEmailTemplate emailTemplateService)
         {
             _loginRepository = loginRepository;
             _mapper = mapper;
             _refereshToken = refereshToken;
+            _userService = userService;
+            _masterService = masterService;
+            _emaiTemplateService = emailTemplateService;
         }
         public async Task<Tuple<int,string>> UserLogin(string username, string password)
         {
@@ -93,6 +100,32 @@ namespace ZdeskUserPortal.Business.Services
                 throw new BusinessException($"Error in business logic while getting user details.{GetType().FullName}.", ex);
             }
            
+        }
+
+        public async Task<bool> SendOTP(string email)
+        {
+            var userResutl = await _userService.GetUsers(email);
+            if (userResutl == null) return false;
+            string otp = GetOTP();
+            var emailTemplateDetail = await _emaiTemplateService.GetEmailTemplate(EmailTemplateConst.FORGOTPASSWORDOTP);
+            var emailReplaceContent = new Dictionary<string, string>()
+            {
+                {"User",userResutl.UserName },
+                {"otp",otp },
+            };
+            var emailTemplateHtml = await _emaiTemplateService.GetHtmlTemplate(emailTemplateDetail.Template, emailReplaceContent);
+
+            var smtpDetails = await _masterService.SmtpDetail();
+            EmailHelper.smtpEntity = smtpDetails;
+            EmailHelper.SendEmail(smtpDetails.FromAddress, userResutl.Email, string.Empty, string.Empty, emailTemplateDetail.EmailSubject, true, emailTemplateHtml);
+            return true;
+
+        }
+        
+        private string GetOTP()
+        {
+            Random generator = new Random();
+            return generator.Next(0, 1000000).ToString("D6");
         }
     }
 }

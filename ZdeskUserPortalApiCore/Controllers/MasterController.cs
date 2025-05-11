@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using ZdeskUserPortal.Business.Interface;
+using ZdeskUserPortal.Domain.Model.Login;
 using ZdeskUserPortal.Domain.Model.Master;
 using ZdeskUserPortal.DTOModel;
 using ZdeskUserPortalApiCore.Common;
@@ -14,10 +16,12 @@ namespace ZdeskUserPortalApiCore.Controllers
     {
         private readonly ILogger<MasterController> _logger;
         private readonly IMaster _master;
-        public MasterController(ILogger<MasterController> logger, IMaster master)
+        private readonly IMapper _mapper;
+        public MasterController(ILogger<MasterController> logger, IMaster master,IMapper mapper)
         {
             _logger = logger;
             _master = master;
+            _mapper = mapper;
         }
 
 
@@ -28,8 +32,8 @@ namespace ZdeskUserPortalApiCore.Controllers
         public async Task<IActionResult> Logo()
         {
             var responseMetadata = new ResponseMetaData<LogoDTO>();
-            LogoDTO logoResult = await _master.OrganizationDetail();
-
+            var result = await _master.OrganizationDetail();
+            var logoResult = _mapper.Map<LogoDTO>(result);
             responseMetadata = new ResponseMetaData<LogoDTO>()
             {
                 Status = HttpStatusCode.OK,

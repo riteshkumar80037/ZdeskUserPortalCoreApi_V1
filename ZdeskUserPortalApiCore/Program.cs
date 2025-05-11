@@ -114,6 +114,8 @@ builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepositoryServi
 builder.Services.AddScoped<IBusinessUnit, BusinessUnitServices>();
 builder.Services.AddScoped<IRefereshToken, RefereshTokenServices>();
 builder.Services.AddScoped<IMaster, MasterServices>();
+builder.Services.AddScoped<IUser, UserServices>();
+builder.Services.AddScoped<IEmailTemplate, EmailTemplateServices>();
 // Assign the configuration to the static property
 SqlDbConnectionFactory.StaticConfiguration = builder.Configuration;
 

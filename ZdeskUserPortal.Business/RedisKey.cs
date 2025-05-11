@@ -10,6 +10,7 @@ namespace ZdeskUserPortal.Business
     {
         public const string BUSINESSUNIT = "BusinessUnit";
         public const string ORGANIZATION = "Organization";
-        public const string SMTP = "SMTP";
+        public const string SMTP = "Smtp";
+        public const string EMAILTEMPLATE = "EmailTemplate";
     }
 }

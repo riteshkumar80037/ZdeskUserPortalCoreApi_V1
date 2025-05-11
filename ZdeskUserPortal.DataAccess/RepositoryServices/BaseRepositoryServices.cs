@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using ZdeskUserPortal.DataAccess.EntityFramwork.Context;
+using ZdeskUserPortal.Domain.Model;
 using ZdeskUserPortal.Domain.RepositoryInterfaces;
 using ZdeskUserPortal.Utility;
 
@@ -43,11 +44,18 @@ namespace ZdeskUserPortal.DataAccess.RepositoryServices
 
         }
 
-        public async Task<T> GetById(BigInteger Id)
+        public async Task<T> GetById(Expression<Func<T, bool>>? predicate = null)
         {
             try
             {
-                return await _dbSet.Where(x => x.Equals(Id)).FirstOrDefaultAsync();
+                IQueryable<T> query = _dbSet;
+
+                if (predicate != null)
+                {
+                    query = query.Where(predicate);
+                }
+
+                return await query.FirstOrDefaultAsync();
             }
             catch (SqlException ex)
             {

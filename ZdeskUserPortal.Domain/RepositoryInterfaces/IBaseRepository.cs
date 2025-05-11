@@ -11,6 +11,6 @@ namespace ZdeskUserPortal.Domain.RepositoryInterfaces
     public interface IBaseRepository<T> where T : class
     {
         Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>>? predicate = null);
-        Task<T> GetById(BigInteger Id);
+        Task<T> GetById(Expression<Func<T, bool>>? predicate = null);
     }
 }

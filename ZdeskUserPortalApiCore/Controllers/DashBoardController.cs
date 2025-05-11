@@ -25,11 +25,11 @@ namespace ZdeskUserPortalApiCore.Controllers
             _logger = logger;
             _master = master;
         }
-        [Microsoft.AspNetCore.Mvc.HttpPost("businessUnit", Name = "BusinessUnit")]
+        [Microsoft.AspNetCore.Mvc.HttpPost("businessUnit1", Name = "BusinessUnit66")]
         [ProducesResponseType<ResponseMetaData<IEnumerable<BusinessUnitEntity>>>(StatusCodes.Status200OK)]
         [ProducesResponseType<ResponseMetaData<IEnumerable<BusinessUnitEntity>>>(StatusCodes.Status400BadRequest)]
         [ProducesResponseType<ResponseMetaData<IEnumerable<BusinessUnitEntity>>>(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> BusinessUnit()
+        public async Task<IActionResult> BusinessUnit66()
         {
             var responseMetadata = new ResponseMetaData<IEnumerable<BusinessUnitEntity>>();
             IEnumerable<BusinessUnitEntity> businessUnits;

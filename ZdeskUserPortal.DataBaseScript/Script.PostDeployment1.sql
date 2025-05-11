@@ -23,3 +23,10 @@ CREATE TABLE [RefereshToken](
   [ExpiryDate] DATETIME NOT NULL
 )
 GO
+ALTER TABLE zdesk_m_users_tbl DROP CONSTRAINT DF__zdesk_m_u__is_ac__46F27704;
+go
+ALTER TABLE zdesk_m_users_tbl ALTER COLUMN is_active bit;
+GO
+ALTER TABLE zdesk_m_template_tbl DROP CONSTRAINT df_isactivemailtemp;
+go
+ALTER TABLE zdesk_m_template_tbl ALTER COLUMN isactive bit;

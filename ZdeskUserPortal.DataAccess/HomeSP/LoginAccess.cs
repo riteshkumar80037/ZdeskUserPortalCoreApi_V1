@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using ZdeskUserPortal.Domain.Model;
 using ZdeskUserPortal.Domain.Model.Login;
+using ZdeskUserPortal.Domain.Model.Master;
 using ZdeskUserPortal.Utility;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 

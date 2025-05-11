@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using ZdeskUserPortal.DataAccess.Home;
-using ZdeskUserPortal.Domain.Model;
+using ZdeskUserPortal.Domain.Model.Master;
 using ZdeskUserPortal.Domain.RepositoryInterfaces.Login;
 using ZdeskUserPortal.Utility;
 
